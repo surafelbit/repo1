@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <title>Lab 5 - More on JS</title>
+  </head>
+  <body>
+    <img
+      id="userIcon"
+      style="position: relative; top: 0px; left: 0px"
+      src="newimage.jpg"
+      width="30"
+      onmouseover="moveIcon();"
+    />
+    
+		<p id="myParagraph" style="">text goes here</p>
+    
+    <img
+      id="picture"
+      src="newimage2.jpg"
+      width="300px"
+      onclick="imgClicked();"
+      onmouseover="imageOver();"
+      onmouseout="imageOut();"
+    />
+<!--
+    <br />
+    <br />
+    <button id="btnPrev" onclick="picturePrev();" disabled>Prev</button>
+    <button id="btnNext" onclick="pictureNext();">Next</button>
+	-->
+  
+    <script>
+      document.write("gh");
+        let students = {
+          stud_1: { name: "Ali Mohammed", age: 22, sex: "Male" },
+          stud_2: { name: "Ali Mohammed", age: 22, sex: "Male" },
+        };
+
+      /// let stringObj = JSON.stringify(students);
+         //document.write(JSON.parse(stringObj));
+         //document.write(students.stud_2.age);
+         let y =4;
+          let x = 5;
+          let sum = x + y;
+
+           document.write(sum);
+       
+      document.write("test");
+        let rand = Math.random() * 10 + 1;
+        rand = parseInt(rand);
+      document.write(rand);
+      <br/>
+        //setInterval(function () {
+         // alert("test");
+         //document.write("test"); 
+         //}, 3000);
+      let myPicture = document.getElementById("picture");
+      document.write(myPicture.width);
+        setTimeout(() => {
+           myPicture.width = "600";
+           myPicture.src = "newimage3.jpg";
+           
+        }, 2000);
+        function imgClicked() {
+          document.getElementById("picture").src = "newimage4.jpg";
+       }
+      //   let index = 1;
+      //   function pictureNext() {
+      //     index++;
+      //     if (index == 17) document.getElementById("btnNext").disabled = true;
+      //     let proPic = document.getElementById("picture");
+      //     proPic.src = "images/artists/index/" + index + ".jpg";
+
+      //     document.getElementById("btnPrev").disabled = false;
+      //   }
+      //   function picturePrev() {
+      //     index--;
+      //     if (index == 1) document.getElementById("btnPrev").disabled = true;
+      //     let proPic = document.getElementById("picture");
+      //     proPic.src = "images/artists/index/" + index + ".jpg";
+
+      //     document.getElementById("btnNext").disabled = false;
+      //   }
+      //   let timer = null;
+      //   function imageOver() {
+      //     let proPic = document.getElementById("picture");
+      //     timer = setInterval(() => {
+      //       let rand = Math.random() * 17 + 1;
+      //       rand = parseInt(rand);
+      //       proPic.src = "images/artists/index/" + rand + ".jpg";
+      //     }, 50);
+      //   }
+
+      //   function imageOut() {
+      //     clearInterval(timer);
+      //   }
+      //   document.getElementById("myParagraph").style.color = "#0000ff";
+      //   document.getElementById("myParagraph").style.background = "#00ff00";
+      //   document
+      //     .getElementById("myParagraph")
+      //     .setAttribute("style", "color: red; background: yellow;");
+      function moveIcon() {
+        let userIcon = document.getElementById("userIcon");
+        let rand = Math.random() * 4 + 1;
+        rand = parseInt(rand);
+
+        if (rand == 1) {
+          let top = parseInt(userIcon.style.top);
+          let newTop = top + 50;
+          userIcon.style.top = newTop + "px";
+        } else if (rand == 2) {
+          let top = parseInt(userIcon.style.top);
+          let newTop = 0;
+          if (top == 0) newTop = top + 50;
+          else newTop = top - 50;
+
+          userIcon.style.top = newTop + "px";
+        } else if (rand == 3) {
+          let left = parseInt(userIcon.style.left);
+          let newLeft = 0;
+          if (left == 0) newLeft = left + 50;
+          else newLeft = left - 50;
+
+          userIcon.style.left = newLeft + "px";
+        } else {
+          let left = parseInt(userIcon.style.left);
+          let newLeft = left + 50;
+
+          userIcon.style.left = newLeft + "px";
+        }
+      }
+    </script>
+  </body>
+</html>
